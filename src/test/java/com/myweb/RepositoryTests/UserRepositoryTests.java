@@ -60,5 +60,29 @@ public class UserRepositoryTests {
 }
 
 
+@Test
+    public void GetById(){
+        Integer userId= 2;
+      Optional<User> userById = repo.findById(userId);
+
+      User user= userById.get();
+
+      Assertions.assertThat(user.getEmail()).isEqualTo("rugamba@gmail.com");
+      Assertions.assertThat(user).isNotNull();
+
+}
+
+@Test
+    public void testDelete(){
+     Integer userId =2;
+     repo.deleteById(2);
+
+    Optional<User> optionalUser = repo.findById(userId);
+    Assertions.assertThat(optionalUser).isNotPresent();
+
+}
+
+
+
 
 }
