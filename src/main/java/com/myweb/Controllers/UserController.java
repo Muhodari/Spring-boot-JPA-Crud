@@ -52,12 +52,27 @@ public class UserController {
       return "user_form";
       }
        catch (UserNotFoundException e){
-           ra.addFlashAttribute("message","the user has been added successfully. ");
+           ra.addFlashAttribute("message",e.getMessage());
            return "redirect:/users";
         }
 
 
   }
+
+
+    @GetMapping("/users/delete/{id}")
+    public  String deleteUser (@PathVariable("id")Integer id,RedirectAttributes ra){
+
+        try {
+         userService.delete(id);
+         ra.addFlashAttribute("message"," user has been Deleted successfully");
+        }
+        catch (UserNotFoundException e){
+            ra.addFlashAttribute("message",e.getMessage());
+        }
+        return "redirect:/users";
+    }
+
 
 
 }
