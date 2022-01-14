@@ -18,4 +18,7 @@ public List<User> listAll(){
 }
 
 
+    public void save(User user) {
+    repo.save(user);
+    }
 }
