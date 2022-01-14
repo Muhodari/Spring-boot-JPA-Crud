@@ -20,11 +20,11 @@ public List<User> listAll(){
 }
 
 
-    public void save(User user) {
+public void save(User user) {
     repo.save(user);
     }
 
-    public  User get(Integer id) throws UserNotFoundException {
+public  User get(Integer id) throws UserNotFoundException {
    Optional<User> result= repo.findById(id);
    if(result.isPresent()){
        return result.get();
