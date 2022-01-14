@@ -10,6 +10,13 @@
 
 <div class="container-fluid text-center">
     <div><h1>Manage Users</h1></div>
+
+<div th:if="${message}" class="alert alert-success text-center" >
+    [[${message}]]
+
+</div>
+
+
   <div class="m-2">
       <a class="h3 " th:href="@{/users/new}" >Add new User</a>
   </div>
