@@ -10,7 +10,9 @@
 
 <div class="container-fluid text-center">
     <div><h1>Manage Users</h1></div>
-  <div> <a href="" class="h3">Add new User</a></div>
+  <div class="m-2">
+      <a class="h3 " th:href="@{/users/new}" >Add new User</a>
+  </div>
 <!--    table-->
 <div>
     <table class="table table-bordered">
@@ -32,8 +34,8 @@
      <td>[[${{user.firstName}}]]</td>
      <td>[[${{user.lastName}}]]</td>
      <td>
-         <a class="h4 mr-3">Edit</a>
-         <a class="h4">Delete</a>
+         <a class="h4 mr-3" th:href="@{'/users/edit/'+${user.id} }">Edit</a>
+         <a class="h4" th:href="@{'/users/delete/'+${user.id} }">Delete</a>
      </td>
  </tr>
 
