@@ -32,6 +32,8 @@ public  User get(Integer id) throws UserNotFoundException {
    throw new UserNotFoundException("Could Not find any users with ID"+ id);
     }
 
+
+
  public void delete(Integer id) throws UserNotFoundException {
   Long count = repo.countById(id);
 
